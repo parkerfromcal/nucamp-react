@@ -29,7 +29,7 @@ function About(props) {
   const partners = props.partners.map((partner) => {
     return (
       <Media tag="li" key={partner.id}>
-        <RenderPartner partner={props.partners[partner.id]} />
+        <RenderPartner partner={partner} />
       </Media>
     );
   });
