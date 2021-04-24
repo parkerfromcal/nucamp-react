@@ -129,8 +129,7 @@ class CommentForm extends Component {
           </ModalBody>
         </Modal>
         <Button outline onClick={this.toggleModal}>
-          <i className="fa fa-pencil fa-lg" />
-          Submit Comment
+          Submit Comment <i className="fa fa-pencil fa-lg" />
         </Button>
       </React.Fragment>
     );
