@@ -28,8 +28,6 @@ function RenderCampsite({ campsite }) {
   );
 }
 
-const maxLength = (len) => (val) => !val || val.length <= len;
-const minLength = (len) => (val) => val && val.length >= len;
 const required = (val) => val && val.length;
 
 class CommentForm extends Component {
@@ -41,6 +39,7 @@ class CommentForm extends Component {
     };
 
     this.toggleModal = this.toggleModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toggleModal() {
@@ -82,8 +81,8 @@ class CommentForm extends Component {
                 <Control.text
                   className="form-control"
                   validators={{
-                    minLength: minLength(2),
-                    maxLength: maxLength(15),
+                    minLength: (value) => value?.length >= 2,
+                    maxLength: (value) => value?.length <= 15,
                   }}
                   model=".author"
                   id="author"
@@ -106,7 +105,7 @@ class CommentForm extends Component {
                   rows="6"
                   className="form-control"
                   validators={{
-                    required,
+                    required: (value) => value && value.length,
                   }}
                   model=".text"
                   id="text"
@@ -118,12 +117,14 @@ class CommentForm extends Component {
                   show="touched"
                   component="div"
                   messages={{
-                    required,
+                    required: "This field is required.",
                   }}
                 />
               </div>
               <div className="form-group">
-                <Button type="submit">Submit</Button>
+                <Button type="submit" color="primary">
+                  Submit
+                </Button>
               </div>
             </LocalForm>
           </ModalBody>
