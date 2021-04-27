@@ -29,8 +29,6 @@ function RenderCampsite({ campsite }) {
   );
 }
 
-const required = (val) => val && val.length;
-
 class CommentForm extends Component {
   constructor(props) {
     super(props);
