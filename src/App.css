@@ -68,3 +68,14 @@ h2 {
   opacity: 0;
   transition: 500ms ease-in;
 }
+
+.headerTransition-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.headerTransition-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: 500ms ease-out;
+}
