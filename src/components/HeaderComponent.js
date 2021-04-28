@@ -17,6 +17,7 @@ import {
   Label,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
+import { Fade } from "react-animation-components";
 
 class Header extends Component {
   constructor(props) {
@@ -56,12 +57,14 @@ class Header extends Component {
       <React.Fragment>
         <Jumbotron fluid>
           <div className="container">
-            <div className="row">
-              <div className="col">
-                <h1>NuCamp</h1>
-                <h2>a better way to camp</h2>
+            <Fade in>
+              <div className="row">
+                <div className="col">
+                  <h1>NuCamp</h1>
+                  <h2>a better way to camp</h2>
+                </div>
               </div>
-            </div>
+            </Fade>
           </div>
         </Jumbotron>
 
